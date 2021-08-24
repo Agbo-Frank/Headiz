@@ -1,84 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    <title>Document</title>
-</head>
+<%- include('partials/head.ejs') %>
 <body>
-    <div class="overlay1"></div>
-    <header>
-        <input type="checkbox" id="menu-bar">
-        <label for="menu-bar">
-            <div class="menu-bar">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </label>
-        <div class="logo">
-            <h1>HeadiZ</h1>
-        </div>
-        <div class="search">
-            <span class="material-icons">search</span>
-            <input type="search" placeholder="Search Product and categories...">
-        </div>
-        <ul>
-            <li>
-                <a href="#">
-                  <span class="material-icons">account_circle</span>
-                  Account
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                  <span class="material-icons"> help_outline</span>
-                  Help
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="cart-icon">
-                        <span class="material-icons">shopping_cart</span>
-                        <span id="cart">0</span>
-                    </div>
-                  Cart
-                </a>
-            </li>
-            <li >
-                <a class="active" href="#">
-                  Sell
-                </a>
-            </li>
-        </ul>
-    </header>
-
+    <%- include('partials/navBar.ejs') %>
     <div class="categories">
-        <ul>
-            <li><a href="#">HAIR BUNDLE</a></li>
-            <li><a href="#">WIGS</a></li>
-            <li><a href="#">FRONTALS & CLOSURE</a></li>
-            <li><a href="#">HAIR CARE</a></li>
-            <li><a href="#">BEAUTY SHOP</a></li>
-            <li><a href="account-details.html">ACCOUNT</a></li>
-        </ul>
-        <a href="#">Sell</a>
+        <%- include('partials/categories.ejs') %>
     </div>
     <div class="body">
     <div class="side-bar">  
         <ul class="breadcrums">
-            <li><a href="Headiz.html">Homepage</a></li>
-            <li><a href="account-details.html" class="active">Account</a></li>
+            <li><a href="Headiz">Homepage</a></li>
+            <li><a href="account" class="active">Account</a></li>
         </ul>
         <h2>Dashboard</h2>
         <ul class="menu">
-            <li><a href="account-details.html" class="active">Account Details</a></li>
-            <li><a href="order.html">Orders</a></li>
-            <li><a href="savedItems.html">Saved item</a></li>
+            <li><a href="account" class="active">Account Details</a></li>
+            <li><a href="order">Orders</a></li>
+            <li><a href="cart">Saved item</a></li>
             <li><a href="#">Logout</a></li>
         </ul>
     </div>
@@ -208,69 +144,6 @@
            let er = password.parentElement.parentElement.nextElementSibling
            er.innerHTML = ' '
        }
-      /* var lname = e.target.lname
-       if(lname.value == ''){
-           let er = lname.parentElement.nextElementSibling
-           er.innerHTML = 'please enter your last name'
-           return false
-       }
-       else{
-           let er = lname.parentElement.nextElementSibling
-           er.innerHTML = ' '
-       }*/
-   
-   
-   
-   
 </script>
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   <!--/* var form = document.forms["headiz-form"]
-
-        form.addEventListener('submit', e => {
-            validateForm()
-        })
-
-    function validateForm(){
-        var fname = document.getElementById('fname')
-        var lname = document.getElementById('lname')
-        var password = document.getElementById('password')
-
-        var fnameValue = fname.value.trim()
-        var lnameValue = lname.value.trim()
-        var passwordValue = password.value.trim()
-
-        if(fnameValue === " "){
-            showError(fnameValue, "please Enter your name!")
-            return false
-        }
-        else{
-            
-        }
-    }
-    function showError(value, text){
-        message = value.closest('.input-field').querySelector('.message')
-        message.innerHTML = text
-    }*/-->
-    
 </body>
 </html>

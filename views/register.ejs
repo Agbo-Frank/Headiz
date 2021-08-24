@@ -1,0 +1,76 @@
+<%- include('partials/head.ejs') %>
+<body>
+    <%- include('partials/navBar.ejs') %>
+    
+    <div class="categories">
+        <%- include('partials/categories.ejs') %>
+    </div>
+    <ul class="breadcrums">
+        <li><a href="Headiz">Homepage</a></li>
+        <li><a href="account">Account</a></li>
+    </ul>
+    <h2>Register</h2>
+
+    <div class="body">
+        <form action="#">
+            <div class="input-field">
+                <label>
+                    <p>First Name</p>
+                    <input type="text" name="fname">
+                </label>
+             </div>
+             <div class="input-field">
+               <label>
+                   <p>Phone Number</p>
+                   <input type="number" name="fname">
+               </label>
+            </div>
+            <div class="input-field">
+                <label>
+                    <p>Password</p>
+                    <div class="password">
+                     <input type="password" name="password">
+                     <span class="material-icons">visibility</span>
+                    </div>
+                </label>
+             </div>
+        </form>
+        <form action="#">
+            <div class="input-field">
+                <label>
+                    <p>Last Name</p>
+                    <input type="text" name="lname">
+                </label>
+             </div>
+             <div class="input-field">
+               <label>
+                   <p>Email Address</p>
+                   <input type="email" name="email">
+               </label>
+            </div>
+            <div class="input-field">
+                <label>
+                    <p>Confirm Password</p>
+                    <div class="password">
+                     <input type="password" name="password">
+                     <span class="material-icons">visibility</span>
+                    </div>
+                </label>
+             </div>
+             <div class="button">
+                <label for="agree">
+                  <span class="material-icons radio">check_box</span>
+                    <input type="checkbox" id="agree" required>
+                    <span>I have agree to the website <a href="">terms and conditions.</a></span>
+                </label>
+  
+                <button>Register</button>
+                <p>Already have an Account? <a href="login">Log in</a></p>
+              </div>
+        </form>
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+</html> 

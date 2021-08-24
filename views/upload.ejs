@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    <title>Document</title>
-</head>
+<%- include('partials/head.ejs') %>
 <body>
     <div class="overlay1"></div>
     <header>
@@ -32,15 +22,7 @@
         </ul>
     </header>
         <div class="categories" style="display: none;">
-        <ul>
-            <li><a href="#">HAIR BUNDLE</a></li>
-            <li><a href="#">WIGS</a></li>
-            <li><a href="#">FRONTALS & CLOSURE</a></li>
-            <li><a href="#">HAIR CARE</a></li>
-            <li><a href="#">BEAUTY SHOP</a></li>
-            <li><a href="#">ACCOUNT</a></li>
-        </ul>
-        <a href="#">Sell</a>
+            <%- include('partials/categories.ejs') %>
     </div>
     <div class="body upload">
         <div class="side-bar">
@@ -49,11 +31,11 @@
             </div>
 
         <ul class="menu">
-            <li><a href="user's-products.html">View my product</a></li>
-            <li><a href="upload.html" class="active">Upload a product</a></li>
-            <li><a href="account-details.html">Account Details</a></li>
-            <li><a href="order.html">Orders</a></li>
-            <li><a href="savedItems.html">Saved item</a></li>
+            <li><a href="my-product">View my product</a></li>
+            <li><a href="upload" class="active">Upload a product</a></li>
+            <li><a href="account">Account Details</a></li>
+            <li><a href="order">Orders</a></li>
+            <li><a href="cart">Saved item</a></li>
         </ul>
         </div>
         <div class="main-content ">

@@ -1,0 +1,66 @@
+<%- include('partials/head.ejs') %>
+<body>
+    <div class="overlay1"></div>
+    <%- include('partials/navBar.ejs') %>
+
+    <div class="categories">
+        <%- include('partials/categories.ejs') %>
+    </div>
+    <div class="body">
+    <div class="side-bar">
+        <ul class="breadcrums">
+            <li><a href="Headiz">Homepage</a></li>
+            <li><a href="account" class="active">Account</a></li>
+        </ul>
+        <h2>Dashboard</h2>
+        <div class="dashboard"></div>
+        <ul class="menu">
+            <li><a href="account">Account Details</a></li>
+            <li><a href="order">Orders</a></li>
+            <li><a href="cart">Saved item</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div>
+          <p>
+              <strong>Hello Helen Chinweke (not chinweike.Helen? <a href="#">Log out</a>)</strong>
+          </p>
+          <p>
+            you can view your recent orders, manage billing address and edit your password and account details.
+          </p>
+        </div>
+   
+    
+    <div class="dcards">
+        <div class="dcard">
+            <a href="account">
+                <span class="material-icons">person_outline</span>
+                <p>Account Details</p>
+            </a>
+        </div>
+        <div class="dcard">
+            <a href="order">
+                <span class="material-icons">assignment</span>
+                <p>Orders</p>
+            </a>
+        </div>
+        <div class="dcard">
+            <a href="cart">
+              <span class="material-icons">favorite_border</span>
+              <p>Saved Items</p>
+            </a>
+        </div>
+        <div class="dcard">
+            <a href="#">   
+              <span class="material-icons">logout</span>
+              <p>Logout</p>
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+<%- include('partials/footer.ejs') %>
+<script src="index.js"></script>
+</body>
+</html>

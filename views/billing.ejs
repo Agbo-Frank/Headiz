@@ -1,72 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    <title>Document</title>
-</head>
+<%- include('partials/head.ejs') %>
 <body>
-    <div class="overlay1"></div>    
-    <header>
-        <input type="checkbox" id="menu-bar">
-        <label for="menu-bar">
-            <div class="menu-bar">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </label>
-        <div class="logo">
-            <h1>HeadiZ</h1>
-        </div>
-        <div class="search">
-            <span class="material-icons">search</span>
-            <input type="search" placeholder="Search Product and categories...">
-        </div>
-        <ul>
-            <li>
-                <a href="account-details.html">
-                  <span class="material-icons">account_circle</span>
-                  Account
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                  <span class="material-icons"> help_outline</span>
-                  Help
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <div class="cart-icon">
-                        <span class="material-icons">shopping_cart</span>
-                        <span id="cart">0</span>
-                    </div>
-                  Cart
-                </a>
-            </li>
-            <li >
-                <a class="active" href="#">
-                  Sell
-                </a>
-            </li>
-        </ul>
-    </header>
+    <%- include('partials/navBar.ejs') %>
 
     <div class="categories">
-        <ul>
-            <li><a href="#">HAIR BUNDLE</a></li>
-            <li><a href="#">WIGS</a></li>
-            <li><a href="#">FRONTALS & CLOSURE</a></li>
-            <li><a href="#">HAIR CARE</a></li>
-            <li><a href="#">BEAUTY SHOP</a></li>
-            <li><a href="account-details.html">ACCOUNT</a></li>
-        </ul>
-        <a href="#">Sell</a>
+        <%- include('partials/categories.ejs) %>
     </div>
 
     <div class="details">
@@ -207,56 +144,7 @@
             </div>
         </div>
     </div>
-
-    
-    <footer>
-        <div>
-          <div>
-              <h3>About us</h3>
-              <p>
-                  Headiz.biz is your online first choice to buy and sell human hair in Nigeria. We supply
-                  all kinds of virgin hair, hair care products, all kinds of lace closure, wigs and Beauty 
-                  products at wholesale price. Pay before & Cash on delivery in port harcourt. Save More & 
-                  Enjoy More.
-              </p>
-          </div>
-
-          <ul>
-              <li><h3>Get help</h3></li>
-              <li>FAQ</li>
-              <li>Shipping</li>
-              <li>Returns</li>
-              <li>Order</li>
-              <li>Payment option</li>
-          </ul>
-
-          <ul>
-              <li><h3>Support</h3></li>
-              <li>Privacy Policy</li>
-              <li>Teams of use</li>
-              <li>Cookies</li>
-          </ul>
-          <div>
-              <div>
-                <p><strong> Social Media</strong></p>
-                <div class="icon">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                </div>
-              </div>
-              <div class="payment">
-                <img src="img/Verve-Logo-750x396.png">
-                <img src="img/master card.png">
-                <img src="img/visaa.png" alt="">
-                <img src="img/interswitch.png" alt="">
-              </div>
-          </div>
-        </div>
-        <hr style="color: black;">
-        <p>Copyright  2021 headizhumanhair.biz.ng / All Right Reserved</p>
-    </footer>
-
+    <%- include('partials/footer.ejs') %>
     <script src="index.js"></script>
 </body>
 </html>
