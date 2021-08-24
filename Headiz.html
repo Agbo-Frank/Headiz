@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    
+    <title>Headiz</title>
+</head>
+<body>
+    <div class="overlay1"></div>
+    <header>
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">
+            <div class="menu-bar">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </label>
+        <div class="logo">
+            <h1>HeadiZ</h1>
+        </div>
+        <div class="search">
+            <span class="material-icons">search</span>
+            <input type="search" placeholder="Search Product and categories...">
+        </div>
+        <ul>
+            <li>
+                <a href="#">
+                  <span class="material-icons">account_circle</span>
+                  Account
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                  <span class="material-icons"> help_outline</span>
+                  Help
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="cart-icon">
+                        <span class="material-icons">shopping_cart</span>
+                        <span id="cart">0</span>
+                    </div>
+                  Cart
+                </a>
+            </li>
+            <li >
+                <a class="active" href="#">
+                  Sell
+                </a>
+            </li>
+        </ul>
+    </header>
+    <div class="categories" style="display: none;">
+        <ul>
+            <li><a href="#">HAIR BUNDLE</a></li>
+            <li><a href="#">WIGS</a></li>
+            <li><a href="#">FRONTALS & CLOSURE</a></li>
+            <li><a href="#">HAIR CARE</a></li>
+            <li><a href="#">BEAUTY SHOP</a></li>
+            <li><a href="account-details.html">ACCOUNT</a></li>
+        </ul>
+        <a href="#">Sell</a>
+    </div>
+
+    <div class="search">
+        <span class="material-icons">search</span>
+        <input type="search" placeholder="Search Product and categories...">
+    </div>
+
+    <div class="headiz_slide">
+        <div class="slide active" style="display: block">
+            <div>
+                <h1>
+                    100% VIRGIN
+                    HUMAN HAIR
+                </h1>
+                <img src="img/IMG-20210720-WA0110.jpg" alt="">
+            </div>
+            <a href="#" class="link"> Shop Now &rarr;</a>
+        </div>
+        <div class="slide">
+            <div>
+                <h1>
+                    100% VIRGIN
+                    HUMAN HAIR
+                </h1>
+                <img src="img/IMG-20210720-WA0110.jpg" alt="">
+            </div>
+            <a href="#" class="link"> Shop Now &rarr;</a>
+        </div>
+        <div class="slide">
+            <div>
+                <h1>
+                    100% VIRGIN
+                    HUMAN HAIR
+                </h1>
+                <img src="img/IMG-20210720-WA0083.jpg" alt="">
+            </div>
+            <a href="#" class="link"> Shop Now &rarr;</a>
+        </div>
+        <div class="slide">
+            <div>
+                <h1>
+                    100% VIRGIN
+                    HUMAN HAIR
+                </h1>
+                <img src="img/IMG-20210720-WA0110.jpg" alt="">
+            </div>
+            <a href="#" class="link"> Shop Now &rarr;</a>
+        </div>
+        <div class="slide">
+            <div>
+                <h1>
+                    100% VIRGIN
+                    HUMAN HAIR
+                </h1>
+                <img src="img/IMG-20210720-WA0082.jpg" alt="">
+            </div>
+            <a href="#" class="link"> Shop Now &rarr;</a>
+        </div>
+        <div class="slide">
+            <div>
+                <h1>
+                    100% VIRGIN
+                    HUMAN HAIR
+                </h1>
+                <img src="img/IMG-20210720-WA0110.jpg" alt="">
+            </div>
+            <a href="#" class="link"> Shop Now &rarr;</a>
+        </div>
+        <div class="slide">
+            <div>
+                <h1>
+                    100% VIRGIN
+                    HUMAN HAIR
+                </h1>
+                <img src="img/IMG-20210720-WA0094.jpg" alt="">
+            </div>
+            <a href="#" class="link"> Shop Now &rarr;</a>
+        </div>
+        <div class="slide">
+            <div>
+                <h1>
+                    100% VIRGIN
+                    HUMAN HAIR
+                </h1>
+                <img src="img/IMG-20210720-WA0110.jpg" alt="">
+            </div>
+            <a href="#" class="link"> Shop Now &rarr;</a>
+        </div>
+
+        <span class="material-icons prev" onclick="prev()">chevron_left</span>
+        <span class="material-icons next" onclick="next()">navigate_next</span>
+
+        <div class="dot-container">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
+    <div class="human-hair">
+        <div>
+            <h3>Luxury human hair</h3>
+            <p>See All &rarr;</p>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0096.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <div>
+                    <small>Aliqua dolore veniam eiusmod amet sunt id eu consectetur ipsum.</small>
+                    <div class="price">
+                        <span><s>$70,000</s></span>
+                        <span>$60,000</span>
+                    </div> 
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0095.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <div>
+                    <small>Aliqua dolore veniam eiusmod amet sunt id eu consectetur ipsum.</small>
+                    <div class="price">
+                        <span><s>$70,000</s></span>
+                        <span>$60,000</span>
+                    </div> 
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0098.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <div>
+                    <small>Aliqua dolore veniam eiusmod amet sunt id eu consectetur ipsum.</small>
+                    <div class="price">
+                        <span><s>$70,000</s></span>
+                        <span>$60,000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0082.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <div>
+                    <small>Aliqua dolore veniam eiusmod amet sunt id eu consectetur ipsum.</small>
+                    <div class="price">
+                        <span><s>$70,000</s></span>
+                        <span>$60,000</span>
+                    </div> 
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0083.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <div>
+                    <small>Aliqua dolore veniam eiusmod amet sunt id eu consectetur ipsum.</small>
+                    <div class="price">
+                        <span><s>$70,000</s></span>
+                        <span>$60,000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0084.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <div>
+                    <small>Aliqua dolore veniam eiusmod amet sunt id eu consectetur ipsum.</small>
+                    <div class="price">
+                        <span><s>$70,000</s></span>
+                        <span>$60,000</span>
+                    </div> 
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0091.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <div>
+                    <small>Aliqua dolore veniam eiusmod amet sunt id eu consectetur ipsum.</small>
+                    <div class="price">
+                        <span><s>$70,000</s></span>
+                        <span>$60,000</span>
+                    </div> 
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0094.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <div>
+                    <small>Aliqua dolore veniam eiusmod amet sunt id eu consectetur ipsum.</small>
+                    <div class="price">
+                        <span><s>$70,000</s></span>
+                        <span>$60,000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0108.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <div>
+                    <small>Aliqua dolore veniam eiusmod amet sunt id eu consectetur ipsum.</small>
+                    <div class="price">
+                        <span><s>$70,000</s></span>
+                        <span>$60,000</span>
+                    </div> 
+                </div>
+            </div>
+            <div class="card">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0104.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <div>
+                    <small>Aliqua dolore veniam eiusmod amet sunt id eu consectetur ipsum.</small>
+                    <div class="price">
+                        <span><s>$70,000</s></span>
+                        <span>$60,000</span>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <button>See More</button>
+    </div>
+
+    <div class="billboard">
+        <div>
+            <img src="img/IMG-20210720-WA0090.jpg">
+        </div>
+        <div>
+            <img src="img/IMG-20210720-WA0089.jpg">
+        </div>
+    </div>
+
+    <div class="billboards">
+        <div>
+            <div class="Bslide" style="display: block;">
+                <img src="img/IMG-20210720-WA0090.jpg">
+            </div>
+            <div class="Bslide">
+                <img src="img/IMG-20210720-WA0089.jpg">
+            </div>
+        </div>
+
+        <div class="dot-container-b">
+            <div class="dot-b active1"></div>
+            <div class="dot-b"></div>
+        </div>
+    </div>
+
+    <div class="products">
+        <div class="text">
+            <p>Hair Care Producs</p>
+            <p>View All
+                <span class="material-icons">navigate_next</span>
+            </p>
+        </div>
+
+        <div class="items owl-carousel">
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0099.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0093.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0105.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0086.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0106.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0105.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0093.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0106.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/human-hair.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="products">
+        <div class="text">
+            <p>Beauty Producs</p>
+            <p>View All 
+                <span class="material-icons">navigate_next</span>
+            </p>
+        </div>
+        <div class="items owl-carousel">
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0109.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0107.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/IMG-20210720-WA0107.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/human-hair2.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/human-hair4.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/human-hair.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/human-hair4.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/human-hair.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+            <div class="item">
+                <div>
+                  <span class="material-icons">favorite_border </span>
+                  <img src="img/human-hair2.jpg">
+                  <p>Add To Cart</p> 
+                </div>
+                <small>Aliqua dolore veniam eiusmod</small>
+                <p># 3,699</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+          <div>
+              <h3>About us</h3>
+              <p>
+                  Headiz.biz is your online first choice to buy and sell human hair in Nigeria. We supply
+                  all kinds of virgin hair, hair care products, all kinds of lace closure, wigs and Beauty 
+                  products at wholesale price. Pay before & Cash on delivery in port harcourt. Save More & 
+                  Enjoy More.
+              </p>
+          </div>
+
+          <ul>
+              <li><h3>Get help</h3></li>
+              <li>FAQ</li>
+              <li>Shipping</li>
+              <li>Returns</li>
+              <li>Order</li>
+              <li>Payment option</li>
+          </ul>
+
+          <ul>
+              <li><h3>Support</h3></li>
+              <li>Privacy Policy</li>
+              <li>Teams of use</li>
+              <li>Cookies</li>
+          </ul>
+          <div>
+              <div>
+                <p><strong> Social Media</strong></p>
+                <div class="icon">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                  <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <div class="payment">
+                <img src="img/Verve-Logo-750x396.png">
+                <img src="img/master card.png">
+                <img src="img/visaa.png" alt="">
+                <img src="img/interswitch.png" alt="">
+              </div>
+          </div>
+        </div>
+        <hr style="color: black;">
+        <p>Copyright  2021 headizhumanhair.biz.ng / All Right Reserved</p>
+    </footer>
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function(){
+     $('.items').owlCarousel({
+    center: true,
+    items: 2,     
+    loop:true,
+    margin:10,
+    autoplay:true,
+    responsive:{
+        0:{
+            items:2
+        },
+        690:{
+            items:3
+        },
+        900:{
+            items:4
+        },
+        1270:{
+            items:5
+        }
+    }
+})
+
+$('.headiz_slide2').owlCarousel({
+    loop:true, 
+    autoplay:true,
+    responsive:{
+        0:{
+            items:1
+        },
+    }
+})
+})
+    </script>
+</body>
+</html>

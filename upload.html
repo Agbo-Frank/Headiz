@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="overlay1"></div>
+    <header>
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">
+            <div class="menu-bar">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </label>
+        <div class="logo">
+            <h1>HeadiZ</h1>
+        </div>
+        <ul>
+            <li >
+                <a class="active" href="#">
+                  Logout
+                </a>
+            </li>
+        </ul>
+    </header>
+        <div class="categories" style="display: none;">
+        <ul>
+            <li><a href="#">HAIR BUNDLE</a></li>
+            <li><a href="#">WIGS</a></li>
+            <li><a href="#">FRONTALS & CLOSURE</a></li>
+            <li><a href="#">HAIR CARE</a></li>
+            <li><a href="#">BEAUTY SHOP</a></li>
+            <li><a href="#">ACCOUNT</a></li>
+        </ul>
+        <a href="#">Sell</a>
+    </div>
+    <div class="body upload">
+        <div class="side-bar">
+            <div class="profile-pics">
+                <input type="file" name="profilePics" id="DP">
+            </div>
+
+        <ul class="menu">
+            <li><a href="user's-products.html">View my product</a></li>
+            <li><a href="upload.html" class="active">Upload a product</a></li>
+            <li><a href="account-details.html">Account Details</a></li>
+            <li><a href="order.html">Orders</a></li>
+            <li><a href="savedItems.html">Saved item</a></li>
+        </ul>
+        </div>
+        <div class="main-content ">
+            <form action="#" class="formD">
+                <div>
+                    <div>
+                       <div class="drop-zone">
+                           <div class="drop-prompt">
+                            <img src="img/insert-picture-icon.svg">
+                            <p>Drop your image here or 
+                                <label for="myfile">
+                                    browse
+                                    <input type="file" name="myfile" id="myfile">
+                                </label>
+                            </p>
+                            <small>Supports: JPG, PNG</small>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-field">
+                        <label>
+                            <p>Category</p>
+                            <select name="category">
+                                <option value="">Select Category</option>
+                                <option value="hairBundle">Hair Bundle</option>
+                                <option value="wig">WIGS</option>
+                                <option value="f/c">FRONTAL AND CLOSURE</option>
+                                <option value="hairCare">HAIR CARE</option>
+                                <option value="beautyShop">BEAUTY SHOP  </option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="input-field">
+                       <label>
+                           <p>Type</p>
+                           <input type="text" name="type">
+                       </label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-field">
+                        <label>
+                            <p>Product Name</p>
+                            <input type="text" name="Pname">
+                        </label>
+                    </div>
+                    <div class="input-field">
+                       <label>
+                           <p>Price</p>
+                           <input type="text" name="price">
+                       </label>
+                    </div>
+                </div>
+                  <div class="input-field">
+                    <label>
+                        <p>Description</p>
+                        <textarea name="message" id="" cols="100%" rows="10"></textarea>
+                    </label>
+                 </div>
+                 <button type="submit">Upload</button>
+            </form>
+        </div>
+
+    </div>
+        
+    <script src="index.js"></script>   
+</body>
+</html>

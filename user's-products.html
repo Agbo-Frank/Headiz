@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="overlay1"></div>
+    <header>
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">
+            <div class="menu-bar">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </label>
+        <div class="logo">
+            <h1>HeadiZ</h1>
+        </div>
+        <ul>
+            <li >
+                <a class="active" href="#">
+                  Logout
+                </a>
+            </li>
+        </ul>
+    </header>
+        <div class="categories" style="display: none;">
+        <ul>
+            <li><a href="#">HAIR BUNDLE</a></li>
+            <li><a href="#">WIGS</a></li>
+            <li><a href="#">FRONTALS & CLOSURE</a></li>
+            <li><a href="#">HAIR CARE</a></li>
+            <li><a href="#">BEAUTY SHOP</a></li>
+            <li><a href="#">ACCOUNT</a></li>
+        </ul>
+        <a href="#">Sell</a>
+    </div>
+    <div class="body users-product">
+        <div class="side-bar">
+            <div class="profile-pics">
+                <input type="file" name="profilePics" id="DP">
+            </div>
+
+        <ul class="menu">
+            <li><a href="user's-products.html" class="active">View my product</a></li>
+            <li><a href="upload.html">Upload a product</a></li>
+            <li><a href="account-details.html">Account Details</a></li>
+            <li><a href="order.html">Orders</a></li>
+            <li><a href="savedItems.html">Saved item</a></li>
+        </ul>
+        </div>
+        <div class="main-content">
+            <div>
+                <!--<div>
+                    <span></span>
+                    <div>Select All</div>
+                </div>-->
+                <div>
+                    Filter by :
+                    <select name="filter" id="">
+                        <option value="all">All</option>
+                        <option value="hairBundle">Hair Bundle</option>
+                        <option value="wig">Wigs</option>
+                        <option value="f/c">Frontal AND Closure</option>
+                        <option value="hairCare">Hair Care</option>
+                        <option value="beautyShop">Beauty Shop  </option>
+                    </select> 
+                </div>
+                <div>
+                    <span class="material-icons">search</span>
+                    <input type="search" placeholder="search name of Hair..." id="search1">
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <!--<th><span></span></th>-->
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                        <th>Inventory</th>
+                        <th><span></span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!--<th><span></span></th>-->
+                        <td>
+                           <img src="img/IMG-20210720-WA0091.jpg">
+                           <p>Brazilain Hair</p>
+                        </td>
+                        <td>Human Hair</td>
+                        <td>$30,000</td>
+                        <td>out of stock</td>
+                        <td>
+                            <p>Edit</p>
+                            <p>Display</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--<th><span></span></th>-->
+                        <td>
+                           <img src="img/IMG-20210720-WA0088.jpg">
+                           <p>Blunt cut Hair</p>
+                        </td>
+                        <td>Human Hair wig</td>
+                        <td>$25,000</td>
+                        <td>In stock</td>
+                        <td>
+                            <p>Edit</p>
+                            <p>Display</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--<th><span></span></th>-->
+                        <td>
+                           <img src="img/IMG-20210720-WA0102.jpg">
+                           <p>Human Hair</p>
+                        </td>
+                        <td>Lace Frontal Hair</td>
+                        <td>$55,000</td>
+                        <td>In stock</td>
+                        <td>
+                            <p>Edit</p>
+                            <p>Display</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--<th><span></span></th>-->
+                        <td>
+                           <img src="img/IMG-20210720-WA0096.jpg">
+                           <p>Remy Hair</p>
+                        </td>
+                        <td>Human Hair</td>
+                        <td>$57,000</td>
+                        <td>In stock</td>
+                        <td>
+                            <p>Edit</p>
+                            <p>Display</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!--<th><span></span></th>-->
+                        <td>
+                           <img src="img/IMG-20210720-WA0087.jpg">
+                           <p>Malaysian Hair</p>
+                        </td>
+                        <td>Human Hair</td>
+                        <td>$55,000</td>
+                        <td>In stock</td>
+                        <td>
+                            <p>Edit</p>
+                            <p>Display</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="body users-product2">
+        <div class="side-bar">
+            <div>
+                <div class="profile-pics">
+                    <input type="file" name="profilePics" id="DP">
+                </div>
+                <a href="upload.html">Upload a product</a>
+            </div>
+            <div>
+                <span class="material-icons">search</span>
+                <input type="search" placeholder="search name of product.." id="search2">
+                <span class="material-icons">tune</span>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="product-card">
+                <img src="img/IMG-20210720-WA0091.jpg">
+                <div><p>Name</p> <p>Malaysian Hair</p></div>
+                <div><p>Type</p><p>wig</p></div>
+                <div><p>Price</p><p>$55,000</p></div>
+                <div><p>Inventory</p><p>in stock</p></div>
+                <div><p>Edit</p><p>Disable</p></div>
+            </div>
+            <div class="product-card">
+                <img src="img/IMG-20210720-WA0096.jpg">
+                <div><p>Name</p> <p>Brazilain Hair</p></div>
+                <div><p>Type</p><p>Human Hair</p></div>
+                <div><p>Price</p><p>$55,000</p></div>
+                <div><p>Inventory</p><p>in stock</p></div>
+                <div><p>Edit</p><p>Disable</p></div>
+            </div>
+            <div class="product-card">
+                <img src="img/IMG-20210720-WA0100.jpg">
+                <div><p>Name</p> <p>Malaysian Hair</p></div>
+                <div><p>Type</p><p>wig</p></div>
+                <div><p>Price</p><p>$55,000</p></div>
+                <div><p>Inventory</p><p>in stock</p></div>
+                <div><p>Edit</p><p>Disable</p></div>
+            </div>
+            <div class="product-card">
+                <img src="img/IMG-20210720-WA0102.jpg">
+                <div><p>Name</p> <p>Brazilain Hair</p></div>
+                <div><p>Type</p><p>Human Hair</p></div>
+                <div><p>Price</p><p>$55,000</p></div>
+                <div><p>Inventory</p><p>in stock</p></div>
+                <div><p>Edit</p><p>Disable</p></div>
+            </div>
+            <div class="product-card">
+                <img src="img/IMG-20210720-WA0085.jpg">
+                <div><p>Name</p> <p>Malaysian Hair</p></div>
+                <div><p>Type</p><p>wig</p></div>
+                <div><p>Price</p><p>$55,000</p></div>
+                <div><p>Inventory</p><p>in stock</p></div>
+                <div><p>Edit</p><p>Disable</p></div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script>
+        var search = document.querySelector('#search2')
+        var product_card = document.querySelectorAll('.product-card')
+
+        search.addEventListener('keyup', e => {
+            e.preventDefault()
+            var input = search.value.toLowerCase()
+
+            product_card.forEach(card => {
+                var div = card.querySelector('div')
+                    var p = div.children[1].textContent
+                   var pl = p.toLowerCase()
+                   if(pl.indexOf(input) == -1){
+                       card.style.display = 'none'
+                   }
+                   else{
+                       card.style.display = 'block'
+                   }
+                })
+        })
+        var search1 = document.querySelector('#search1')
+        var table = document.querySelectorAll('tbody tr')
+
+        search1.addEventListener('keyup', e => {
+            var input = e.target.value.toLowerCase()
+
+            table.forEach(tr => {
+            var td = tr.children[0]
+            let p = td.children[1].textContent
+            p = p.toLowerCase()
+            if(p.indexOf(input) == -1){
+                tr.style.display = 'none'
+            }
+            else{
+                tr.style.display = 'table-row'
+            }
+        })
+        })
+
+
+    </script>
+</body>
+</html>
