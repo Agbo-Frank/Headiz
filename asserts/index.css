@@ -363,9 +363,9 @@ header ul li a.active{
     display: none;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 70%;
     border-radius: 10px;
-    padding: 5px;
+    padding: 10px;
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .billboards div img{
@@ -397,11 +397,9 @@ header ul li a.active{
     justify-content: space-between;
 }
 .items{
-    margin: 5px auto;
     position: relative;
 }
 .item{
-    margin: 15px auto;
     position: relative;
     height: 300px;
     width: 200px;
@@ -447,6 +445,9 @@ header ul li a.active{
 .item small{
     font-size: 12px;
     color: black;
+}
+.item p{
+    text-align: center;
 }
 /* footer */
 footer{
@@ -608,7 +609,8 @@ select[name="category"]{
     border-radius: 5px;
     outline: none;
 }
-.formD .input-field > label > input{
+.formD .input-field > label > input,
+.formD .input-field > label > select{
     width: 100%;
     background-color: var(--white) !important;
     padding: 9px;
@@ -859,15 +861,18 @@ button:hover{
     color: #979393;
     transition: all 0.2s ease-in;
 }
+.main-content .dcard a{
+    text-decoration: none;
+    color: #979393;
+}
 .main-content .dcard:hover{
     background-color: var(--main_color);
     color: var(--white);
 }
 .main-content .dcard > span{
     font-size: 50px;
-    color: #979393;
 }
-.main-content .dcard:hover > span{
+.main-content .dcard:hover > a{
     color: var(--white);
 }
 
@@ -896,7 +901,7 @@ button:hover{
     background-repeat: no-repeat;
 }
 .profile-pics-over{
-    border: solid 1px var(--main_color);
+    border: dashed 1px var(--main_color);
 }
 .profile-pics > img{
     width: 100%;
@@ -1087,14 +1092,16 @@ button:hover{
 }
 .product-details > div:last-child > .stars > span{
     color: #afabab;
+    cursor: pointer;
     font-size: 15px;
 }
 .price{
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 .price > span:first-child{
     color: var(--main_color);
-    margin-right: 20px;
 }
 .price-field{
     display: flex;
@@ -1399,10 +1406,11 @@ button:hover{
         grid-column: 1 / span 2;
         display: flex;
         height: 300px;
+        width: 100%;
     }
     footer > p{
         padding: 10px;
-        font-size: 15px;
+        font-size: 13px;
     }
 }
 @media screen and (max-width: 930px){
@@ -1601,6 +1609,18 @@ button:hover{
         color: var(--main_color);
         align-self: flex-start;
     }
+    .saved-item > div > .text,
+    .order-item > div > .text{
+        margin: 0 auto;
+    }
+    .order-item > div > .text > div{
+        display: flex;
+        justify-content: space-between;
+    }
+    .order-item > div:last-child{
+        text-align: center;
+        margin: 0 auto;
+    }
     .saved-item > .cart{
         width: 100%;
         justify-content: space-between;
@@ -1633,12 +1653,15 @@ button:hover{
         margin-right: 10px;
     }
     .upload > .main-content > .formD  .input-field input,
+    .upload > .main-content > .formD  .input-field select,
     .upload > .main-content > .formD  .input-field textarea{
         background-color: #f0f0f0 !important;
     }
-
     .block{
         width: 85%;
+    }
+    .price{
+        font-size: 14px;
     }
 }
 

@@ -472,36 +472,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
-        $(document).ready(function(){
+      $(document).ready(function(){
      $('.items').owlCarousel({
-    center: true,
-    items: 2,     
     loop:true,
     margin:10,
     autoplay:true,
     responsive:{
         0:{
-            items:2
-        },
-        690:{
-            items:3
-        },
-        900:{
-            items:4
-        },
-        1270:{
-            items:5
-        }
-    }
-})
-
-$('.headiz_slide2').owlCarousel({
-    loop:true, 
-    autoplay:true,
-    responsive:{
-        0:{
             items:1
         },
+        690:{
+            items:2
+        },
+        790:{
+            items:3
+        },
+        800:{
+            items:4
+        },
+        1090:{
+            items:5
+        },
+        1270:{
+            items:6
+        }
     }
 })
 })

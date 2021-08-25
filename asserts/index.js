@@ -58,7 +58,7 @@
         }
     }
      setInterval(next, 10800)
-     setInterval(BBnext, 1000)
+     setInterval(BBnext, 10000)
      
     var show_password = document.querySelectorAll('.password span')
     var password_is_showing = false
@@ -163,11 +163,14 @@
              profile_pics.appendChild(profile_pics_img)
              profile_pics_img.src = URL.createObjectURL(e.dataTransfer.files[0]) 
          }
+         else{
+            profile_pics_img.src = URL.createObjectURL(e.dataTransfer.files[0])
+         }
          
      })
      profile_pics.addEventListener('click', e => {
          profile_pics_input.click()
-     })
+     
      profile_pics_input.addEventListener('change', e => {
 
         var profile_pics_img = document.querySelector('.profile-pics img')
@@ -178,9 +181,13 @@
              profile_pics.appendChild(profile_pics_img)
              if(e.target.files.type.startsWith("image/")){
                 profile_pics_img.src = URL.createObjectURL(e.target.files[0])  
-            } 
-         }
+            }
+        } 
+            else{
+                profile_pics_img.src = URL.createObjectURL(e.target.files[0])
+            }
      })
+    })
 
 
 
