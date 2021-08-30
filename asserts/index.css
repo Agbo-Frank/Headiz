@@ -254,17 +254,16 @@ header ul li a.active{
 }
 .cards{
     display: grid;
-    grid-template-columns:  repeat(5, 18%);
-    grid-template-rows: 300px 300px;
+    grid-template-columns:  repeat(auto-fit, minmax(10rem, 1fr));
     justify-content: space-evenly;
-    grid-gap: 2%;
+    grid-gap: 3%;
     margin-bottom: 80px;
 }
 .card{
     display: flex;
     flex-flow: column;
     margin: 0 auto;
-    height: 100%;
+    height: 300px;
     position: relative;
 }
 .card > div:first-child{
@@ -522,7 +521,7 @@ footer > p{
      background-color: var(--grey);
      display: flex;
      justify-content: center;
-     margin-bottom: 50px;
+     /* margin-bottom: 50px; */
 }
 .categories > ul{
     list-style: none;
@@ -610,7 +609,8 @@ select[name="category"]{
     outline: none;
 }
 .formD .input-field > label > input,
-.formD .input-field > label > select{
+.formD .input-field > label > select,
+.formD > .input-field > label > .password{
     width: 100%;
     background-color: var(--white) !important;
     padding: 9px;
@@ -698,6 +698,17 @@ button:hover{
     color: var(--main_color);
     font-weight: bold;
     text-decoration: none;
+}
+.signup-form{
+    display: flex;
+    width: 100%;
+    flex-flow: row;
+    justify-content: space-evenly;
+    gap: 40px;
+    padding: 10px 20px;
+}
+.signup-form > div{
+    flex: 50%;
 }
 .order-details{
     flex: 50%;
@@ -849,12 +860,12 @@ button:hover{
 }
 .main-content .dcards{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 25px 60px;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    grid-gap: 20px 55px;
     margin-top: 60px;
 }
 .main-content .dcard{
-    padding: 13px;
+    padding: 15px;
     background-color: var(--white);
     text-align: center;
     box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
@@ -1197,9 +1208,24 @@ button:hover{
 .saved-item > .cart a:first-child:hover{
     background-color: var(--add);
     color: var(--footer_color);
+
 }
-.saved-item > .cart a:last-child:hover{
+.cart #remove{
+    position: relative;
+}
+.cart #remove::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    clip-path: circle(0 at 50% 50%);
     background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    transition: all 0.2s linear;
+}
+.cart #remove:hover::before{
+    clip-path: circle(100%);
 }
 .cart{
     user-select: none;
@@ -1214,42 +1240,105 @@ button:hover{
     top: -40px;
     left: -350px;
 }
-.move{
-    left: 35%;
+.forms{
+    position: relative;
+    margin: 30px 0;
 }
-.guy{
+.form{
+    padding: 20px;
+    width: 70% !important;
+    margin: 60px auto;
     position: absolute;
-    top: 10%;
-    right: 30%;
-    width: 300px;
-    text-align: center;
-    color: white;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%)
 }
-.guy > button{
-    background-color: transparent;
-    border: solid 1.5px white;
-    border-radius: 20px;
-}
-.signin-signout{
+.clip-path{
     display: flex;
-    justify-content: space-between;
-    padding: 20px 50px;
-    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(0 at 95% 3%);
+    background-color: #f0f0f0;
+    opacity: 0.2;
+    position: relative;
+    top: 0;right: 0;
+    left: 0;
+    transition: all 0.5s linear;
 }
-.signin-signout .signin{
-    flex: 50%;
+.clip-path.active {
+    clip-path: circle(100%);
+    opacity: 1;
+}
+.clip-path.active + .login{
+    opacity: 0;
+}
+.btn{
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    position: absolute;
+    top: 3%;
+    right: 5%;
+    z-index: 10;
+    font-size: .9rem;
+}
+.btn a{
+    text-decoration: none;
+    color: black;
+    padding: 7px 10px;
+    border-radius: 6px;
+}
+.btn a.active{
+    color: #96316e;
+    background-color: #f3bede;
+}
+
+/* ripples start */
+.a{
+    text-decoration: none;
+    color: var(--footer_color);
+    background-color: #f3bede;
     position: relative;
 }
-.signin-signout > .signin-form{
+.a::before{
+    content: '';
+    width: 100%;
+    height: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
+    top: 0; left: 0;
+    clip-path: circle(0% at 50% 50%);
+    background-color: var(--btn);
+    opacity: 0.2;
+    transition: all 0.4s linear;
+}
+.a:hover::before{
+    clip-path: circle(100%);
+    color: white;
     opacity: 0.5;
 }
-.signin-signout .signout{
-    flex: 50%;
+.ripple{
+    position: relative;
 }
+
+.ripple::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    clip-path: circle(0% at 50% 50%);
+    background-color: #f3bede;
+    opacity: 0.2;
+    transition: all 0.7s linear;
+}
+.ripple:hover::before{
+    clip-path: circle(100%);
+    color: white;
+    opacity: 0.5;
+}
+/* ripples end */
 /*Contact*/
 .contact, .login{
     width: 80%;
@@ -1288,17 +1377,7 @@ button:hover{
     header .search{
         display: none;
     }
-    .cards{
-        display: grid;
-        grid-template-columns:  repeat(4, 20%)  ;
-        grid-template-rows: 300px 300px 300px;
-        justify-content: space-evenly;
-        align-items: space-between;
-        grid-column-gap: 5%;
-        grid-row-gap: 4%;
-    }
     .main-content .dcards{
-        grid-template-columns: repeat(2, 1fr);
         grid-gap: 18px 30px;
         margin-top: 40px;
     }
@@ -1413,9 +1492,6 @@ button:hover{
         font-size: 13px;
     }
 }
-@media screen and (max-width: 930px){
-    
-}
 @media screen and (max-width: 830px){
     header{
         z-index: 10;
@@ -1512,15 +1588,6 @@ button:hover{
     .human-hair > div:first-child p{
         display: block;
     }
-    .cards{
-        display: grid;
-        grid-template-columns:  repeat(2, 50%)  ;
-        grid-template-rows: 300px 300px 300px;
-        justify-content: space-evenly;
-        align-items: space-between;
-        grid-column-gap: 10%;
-        grid-row-gap: 4%;
-    }
     .human-hair  button,
     .card:nth-child(7),
     .card:nth-child(8),
@@ -1551,7 +1618,8 @@ button:hover{
     .order-details > div:last-child button{
         width: 100%;
     }
-    .body{
+    .body,
+    .signup-form{
         flex-flow: column;
     }
     .side-bar{

@@ -16,25 +16,40 @@
         <input type="search" placeholder="Search Product and categories...">
     </div>
     <ul>
+        <% if(user) { %>
         <li>
             <a href="/account">
               <span class="material-icons">account_circle</span>
-              Account
-            </a>
-        </li>
-        <li>
-            <a href="contact">
-              <span class="material-icons"> help_outline</span>
-              Help
+              <%= user.fname %>
             </a>
         </li>
         <li>
             <a href="cart">
                 <div class="cart-icon">
-                    <span class="material-icons">shopping_cart</span>
+                     <span class="material-icons">shopping_cart</span>
                     <span id="cart">0</span>
                 </div>
-              Cart
+                Cart
+            </a>
+        </li>
+
+        <li >
+            <a class="active" href="/logout">
+                Logout
+            </a>
+        </li>
+        <% } else { %>
+        
+        <li>
+            <a href="/signup">
+              <span class="material-icons">logout</span>
+              Sign Up
+            </a>
+        </li>
+        <li>
+            <a href="/login">
+              <span class="material-icons"> login</span>
+              login
             </a>
         </li>
         <li >
@@ -42,5 +57,6 @@
               Sell
             </a>
         </li>
+        <% } %>
     </ul>
 </header>

@@ -11,19 +11,22 @@
     </ul>
     <h2>Register</h2>
 
-    <div class="body">
-        <form action="#">
+    <div>
+        <form class="signup-form">
+            <div>
             <div class="input-field">
                 <label>
                     <p>First Name</p>
                     <input type="text" name="fname">
                 </label>
+                <p class="error fname"></p>
              </div>
              <div class="input-field">
                <label>
                    <p>Phone Number</p>
-                   <input type="number" name="fname">
+                   <input type="number" name="pnumber">
                </label>
+               <p class="error pnumber"></p>
             </div>
             <div class="input-field">
                 <label>
@@ -33,44 +36,94 @@
                      <span class="material-icons">visibility</span>
                     </div>
                 </label>
+                <p class="error password"></p>
              </div>
-        </form>
-        <form action="#">
+            </div>
+
+        <div>
             <div class="input-field">
                 <label>
                     <p>Last Name</p>
                     <input type="text" name="lname">
                 </label>
+                <p class="error lname"></p>
              </div>
              <div class="input-field">
                <label>
                    <p>Email Address</p>
                    <input type="email" name="email">
                </label>
+               <p class="error email"></p>
             </div>
-            <div class="input-field">
+            <!-- <div class="input-field">
                 <label>
                     <p>Confirm Password</p>
                     <div class="password">
-                     <input type="password" name="password">
+                     <input type="password" name="cpassword">
                      <span class="material-icons">visibility</span>
                     </div>
                 </label>
-             </div>
+             </div> -->
              <div class="button">
                 <label for="agree">
                   <span class="material-icons radio">check_box</span>
-                    <input type="checkbox" id="agree" required>
+                    <input type="checkbox" id="agree">
                     <span>I have agree to the website <a href="">terms and conditions.</a></span>
                 </label>
   
                 <button>Register</button>
                 <p>Already have an Account? <a href="login">Log in</a></p>
               </div>
+              </div>
         </form>
     </div>
 
 
     <script src="index.js"></script>
+    <script>
+        var signupForm = document.querySelector('.signup-form')
+        var fnameError = document.querySelector('.error.fname')
+        var lnameError = document.querySelector('.error.lname')
+        var emailError = document.querySelector('.error.email')
+        var passwordError = document.querySelector('.error.password')
+
+        signupForm.addEventListener('submit',async (e) => {
+            e.preventDefault()
+            fnameError.innerHTML = ''
+            lnameError.innerHTML = ''
+            emailError.innerHTML = ''
+            passwordError.innerHTML = ''
+
+            var doc = {
+                fname: signupForm.fname.value,
+                lname: signupForm.lname.value,
+                email: signupForm.email.value,
+                password: signupForm.password.value,
+                pnumber: signupForm.pnumber.value
+            }
+            try{
+                var result = await fetch('/signup', {
+                    method: "POST",
+                    body: JSON.stringify(doc),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                var data = await result.json()
+                if(data.user){
+                    location.assign('/login')
+                }
+                if(data.error){
+                    fnameError.innerHTML = data.error.fname
+                    lnameError.innerHTML = data.error.lname
+                    emailError.innerHTML = data.error.email
+                    passwordError.innerHTML = data.error.password
+                }
+            }
+            catch (err) {
+                console.log(err);
+            }
+        })
+    </script>
 </body>
 </html> 

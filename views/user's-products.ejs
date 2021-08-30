@@ -1,26 +1,6 @@
 <%- include('partials/head.ejs') %>
 <body>
-    <div class="overlay1"></div>
-    <header>
-        <input type="checkbox" id="menu-bar">
-        <label for="menu-bar">
-            <div class="menu-bar">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </label>
-        <div class="logo">
-            <h1>HeadiZ</h1>
-        </div>
-        <ul>
-            <li >
-                <a class="active" href="#">
-                  Logout
-                </a>
-            </li>
-        </ul>
-    </header>
+    <%- include('partials/navBar.ejs') %>
         <div class="categories" style="display: none;">
             <%- include('partials/categories.ejs') %>
     </div>

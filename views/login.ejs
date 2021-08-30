@@ -19,8 +19,8 @@
             <form action="" class="login">
                 <div class="input-field">
                    <label>
-                       <p>Email address or Phone Number</p>
-                       <input type="text" name="uname">
+                       <p>Email address</p>
+                       <input type="email" name="email">
                    </label>
                 </div>
                 <div class="input-field">
@@ -48,5 +48,33 @@
 
     
     <script src="index.js"></script>
+    <script>
+        var login_form = document.querySelector('.login')
+
+        login_form.addEventListener('submit', async (e) => {
+            e.preventDefault()
+
+            var doc = {
+                email: login_form.email.value,
+                password: login_form.password.value
+            }
+
+            try{
+                var result = await fetch('/login', {
+                    method: "POST",
+                    body: JSON.stringify(doc),
+                    headers: {"Content-Type": "application/json"}
+                })
+                var data = await result.json()
+                if(data.user){
+                    // console.log(data.user)
+                    location.assign('/')
+                }
+            }
+            catch (err){
+                console.log(err)
+            }
+        })
+    </script>
 </body>
 </html>

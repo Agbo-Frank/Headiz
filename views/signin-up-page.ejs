@@ -1,0 +1,95 @@
+<%- include('partials/head.ejs') %>
+<body>
+    <div class="overlay1"></div>
+    <%- include('partials/navBar.ejs') %>
+
+    <div class="categories">
+        <%- include('partials/categories.ejs') %>
+    </div>
+
+<div class="forms">
+    <div class="btn">
+        <a href="#" class="active login-btn">Login</a>
+        <a href="#" class="signUp-btn">Sign Up</a>
+    </div>
+    <div>
+        <div class="clip-path">
+            <form class="sign-up form  formD">
+                <div class="input-field">
+                   <label>
+                       <p>Email address or Phone Number</p>
+                       <input type="text" name="uname">
+                   </label>
+                </div>
+                <div class="input-field">
+                    <label>
+                        <p>Password</p>
+                        <div class="password">
+                         <input type="password" name="password">
+                         <span class="material-icons">visibility</span>
+                        </div>
+                        <div>
+                            <p>Remember Me</p>
+                            <p>Forget Password?</p>
+                        </div>
+                    </label>
+                 </div>
+                 <div class="button">
+                    <button type="submit">sign Up</button>
+                    <p>Not a Member? <a href="signup">Register</a></p>
+                 </div>
+            </form>
+        </div>
+
+        <form class="login form">
+            <div class="input-field">
+               <label>
+                   <p>Email address or Phone Number</p>
+                   <input type="text" name="uname">
+               </label>
+            </div>
+            <div class="input-field">
+                <label>
+                    <p>Password</p>
+                    <div class="password">
+                     <input type="password" name="password">
+                     <span class="material-icons">visibility</span>
+                    </div>
+                    <div>
+                        <p>Remember Me</p>
+                        <p>Forget Password?</p>
+                    </div>
+                </label>
+             </div>
+             <div class="button">
+                <button type="submit">Login</button>
+                <p>Not a Member? <a href="signup">Register</a></p>
+             </div>
+        </form>
+
+    </div>
+</div>
+
+<script>
+    var forms= document.querySelector('.forms')
+    var loginBtn = document.querySelector('.login-btn')
+    var signUpBtn = document.querySelector('.signUp-btn')
+    var clipPath = document.querySelector('.clip-path')
+    
+    signUpBtn.addEventListener('click', (e) => {
+        if(!clipPath.classList.contains('active')){
+            clipPath.classList.add('active')
+            signUpBtn.classList.add('active')
+            loginBtn.classList.remove('active')
+            forms.style.backgroundColor = '#f0f0f0'
+        }
+    })
+    loginBtn.addEventListener('click', (e) => {
+        if(clipPath.classList.contains('active')){
+            clipPath.classList.remove('active')
+            signUpBtn.classList.remove('active')
+            loginBtn.classList.add('active')
+            forms.style.backgroundColor = 'white'
+        }
+    })
+</script>
