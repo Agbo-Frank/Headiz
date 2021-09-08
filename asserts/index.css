@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css");
+/* @import url('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css'); */
 
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     box-sizing: border-box;
 }
 :root{
@@ -263,8 +265,11 @@ header ul li a.active{
     display: flex;
     flex-flow: column;
     margin: 0 auto;
-    height: 300px;
-    position: relative;
+    height: 250px;
+    transition: all 0.3s;
+}
+.card:hover{
+    transform: scale(1.05);
 }
 .card > div:first-child{
     position: relative;
@@ -280,24 +285,22 @@ header ul li a.active{
     box-shadow: 3px 2px 8px rgba(172, 85, 85, 0.5);
 }
 .card > div:first-child > img{
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
     max-width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.card > div:first-child p{
+.card > div:first-child a{
+    text-decoration: none;
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 0;;
     width: 100%;
     text-align: center;
     background-color: var(--add);
     padding: 6px auto;
     color: var(--footer_color);
     cursor: pointer;
+    user-select: none;
 }
 .card > div:first-child span{
     position: absolute;
@@ -305,7 +308,6 @@ header ul li a.active{
     right: 10px;
     color: var(--main_color);
     cursor: pointer;
-    z-index: 2;
     user-select: none;
 }
 .card small{
@@ -395,13 +397,23 @@ header ul li a.active{
     display: flex;
     justify-content: space-between;
 }
+/* .owl-pagination{
+    position: absolute;
+    right: 0;
+    top: -50px;
+} */
 .items{
-    position: relative;
+    height: 250px;
+    width: 100% !important;
+    margin: 10px auto;
 }
 .item{
-    position: relative;
-    height: 300px;
+    height: 250px;
     width: 200px;
+    transition: all linear 0.3s;
+}
+.item:hover{
+    transform: scale(1.05);
 }
 .item > div:first-child{
     position: relative;
@@ -413,15 +425,11 @@ header ul li a.active{
     overflow: hidden;
 }
 .item > div:first-child > img{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 85%;
+    max-width: 100%;
     height: auto;
-    object-fit: contain;
+    object-fit: cover;
 }
-.item > div:first-child p{
+.item > div:first-child a{
     position: absolute;
     bottom: 0;
     left: 0;
@@ -475,8 +483,13 @@ footer > div > ul{
     list-style: none;
     flex: 10%;
 }
-footer > div > ul li{
+footer > div > ul > li{
     padding: 5px 0;
+    width: 100%;
+    transition: all 0.2s linear;
+}
+footer > div > ul li:hover{
+    text-indent: 20px !important;
 }
 footer > div > div:last-child{
     display: flex;
@@ -490,9 +503,11 @@ footer > div > div:last-child .icon{
 footer > div > div:last-child .icon a i{
     color: var(--white);
     cursor: pointer;
+    transition: all 0.3s linear;
 }
 footer > div > div:last-child .icon a i:hover{
     color: var(--Hcolor);
+    transform: scale(1.05);
 }
 footer > div > div:last-child div:first-child{
      justify-self: flex-start;
@@ -584,7 +599,7 @@ form .input-group > .input-field,
 .input-field{
     margin-bottom: 25px;
 }
-.message{
+.error{
     font-size: 12px;
     margin-left: 10px;
     color: #e74c3c;
@@ -626,10 +641,12 @@ form .input-field > label >.password{
     padding: 9px;
     border: 1px #f0f0f0 solid;
 }
-.password + div{
-    display: flex;
-    justify-content: space-between;
+.forgetPassword a{
+    float: right;
     font-size: 14px;
+    text-decoration: none;
+    color: var(--main_color);
+    font-weight: bolder;
 }
 form .input-field > label >.password > span{
     color: #a7a3a3;
@@ -977,7 +994,6 @@ button:hover{
     margin: 10px auto;
 }
 .upload > .main-content > .formD > div .drop-zone label,
-.password + div > p:last-child,
 .input-field + div >P > a{
     font-weight: bold;
     color: var(--main_color);
@@ -1730,6 +1746,11 @@ button:hover{
     }
     .price{
         font-size: 14px;
+    }
+}
+@media screen and (max-width: 790px){
+    .items{
+        padding: 10px 100px !important;
     }
 }
 

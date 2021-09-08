@@ -1,5 +1,5 @@
 var jwt = require('jsonwebtoken')
-var User = require('./model')
+var User = require('./models/user')
 
 var authenticate = (req, res, next) => {
     var token = req.cookies.jwt

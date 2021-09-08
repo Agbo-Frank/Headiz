@@ -1,5 +1,7 @@
-var User = require('./model')
+var User = require('./models/user')
+var Product = require('./models/product')
 var jwt = require('jsonwebtoken')
+var bcrypt = require('bcrypt')
 
 var maxAge = 60 * 60 * 24
 function tokenGen(id) {
@@ -31,7 +33,7 @@ module.exports.account = (req, res) => {
     res.render('account-details')
 }
 module.exports.billing = (req, res) => {
-    res.render('billing')
+    res.render('bills')
 }
 module.exports.contact = (req, res) => {
     res.render('contact')
@@ -41,6 +43,22 @@ module.exports.dashboard = (req, res) => {
 }
 module.exports.forgetPassword = (req, res) => {
     res.render('forgetpassword')
+}
+module.exports.forgetPassword_put = async (req, res) => {
+    try {
+        var gen_pword = Math.floor(Math.random() * 100000)
+        gen_pword = gen_pword.toString()
+        console.log(gen_pword);
+        var salt = await bcrypt.genSalt()
+        var new_password = await bcrypt.hash(gen_pword, salt)
+        var u = await User.findOne(req.body)
+        var updated_pw = await u.updateOne({ password: new_password})
+        res.status(200).json({newpword: new_password})
+    } catch (err) {
+       var error = errorHandler(err)
+       res.status(400).json({ error })
+        console.log(error);
+    }
 }
 module.exports.signupLogin = (req, res) => {
     res.render('signin-up-page')
@@ -96,6 +114,30 @@ module.exports.success = (req, res) => {
 }
 module.exports.upload = (req, res) => {
     res.render('upload')
+}
+module.exports.upload_post = async (req, res) => {
+    try {
+        var { category, type, pname, price, message} = req.body
+        var token = req.cookies.jwt
+        var { path } = req.file
+    
+        if(token){
+            jwt.verify(token, 'Frank', async (err, decodoedToken) => {
+                var p = await Product.create({
+                    userId: decodoedToken.id,
+                    path: path,
+                    category: category,
+                    type: type,
+                    productName: pname,
+                    price: price,
+                    description: message
+                }) 
+                res.status(200).redirect('upload')
+            })
+        }
+    } catch (error) {
+        console.log(error);
+    }
 }
 module.exports.userProduct = (req, res) => {
     res.render("user's-products")

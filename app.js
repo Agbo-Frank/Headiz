@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cookieParser())
 
-mongoose.connect('mongodb://localhost/Headiz')
+mongoose.connect('mongodb+srv://headiz:531273@cluster0.m0urr.mongodb.net/headiz')
 .then(res => app.listen(port, ()=> {
     console.log('connected successfully');
 }))
@@ -22,5 +22,3 @@ app.set('view engine', 'ejs')
 
 app.use('/', express.static('asserts'))
 app.use(router)
-
-

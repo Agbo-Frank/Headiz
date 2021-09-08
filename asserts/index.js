@@ -81,9 +81,9 @@
 
     var favorites = document.querySelectorAll('.items .item div span')
     var cards = document.querySelectorAll('.cards .card div span')
-    var favoured = true
 
    favorites.forEach((favorite) => {
+    var favoured = true
        favorite.addEventListener('click', (e) => {
            if(favoured){
                e.target.innerHTML = 'favorite'
@@ -193,73 +193,7 @@
 
      //UPLOADED PRODUCT
 
-    var drop_input = document.querySelector('#myfile')
-    var drop_zone = drop_input.closest('.drop-zone')
-
-    drop_zone.addEventListener('dragover', (e) => {
-        e.preventDefault()
-        drop_zone.classList.add('drop-over')
-    });
-    drag_array.forEach(type => {
-        drop_zone.addEventListener(type, (e) => {
-            drop_zone.classList.remove('drop-over')
-        })
-    });
-    drop_zone.addEventListener('drop', e => {
-        e.preventDefault()
-        drop_zone.querySelector('.drop-prompt').remove()
-
-       if(e.dataTransfer.files.length){
-            drop_input.files = e.dataTransfer.files;
-            updateThumb(drop_zone, e.dataTransfer.files[0]);
-           
-        }
-    });
-    drop_input.addEventListener('change', e => {
-        e.preventDefault()
-        drop_zone.querySelector('.drop-prompt').remove()
-        if(drop_input.files.length){ 
-            updateThumb(drop_zone, drop_input.files[0]);
-        }
-    })
-
-   function updateThumb(drop_zone, file){
-        var thumb = document.querySelector('.drop-zone-thumb')
-        var thumb_img = document.querySelector('.drop-zone-thumb img')
-
-        if(!thumb){
-            thumb = document.createElement('div')
-            thumb_img = document.createElement('img')
-            thumb.classList.add('drop-zone-thumb')
-            thumb.appendChild(thumb_img)
-            drop_zone.appendChild(thumb)
-
-            if(file.type.startsWith("image/")){
-            thumb_img.src = URL.createObjectURL(file)  
-        }
-        else{
-            thumb.classList.remove('drop-zone-thumb')
-            thumb.classList.add('drop-prompt2')
-            var thumb_text = document.createElement(p)
-            thumb_text.textContent = 'Upload only images'
-            thumb.appendChild(thumb_text)
-            drop_zone.appendChild(thumb)
-        }
-        }
-        else{
-            if(file.type.startsWith("image/")){
-            thumb_img.src = URL.createObjectURL(file)  
-        }
-        else{
-            thumb.classList.remove('drop-zone-thumb')
-            thumb.classList.add('drop-prompt2')
-            var thumb_text = document.createElement(p)
-            thumb_text.textContent = 'Upload only images'
-            thumb.appendChild(thumb_text)
-            drop_zone.appendChild(thumb)
-        }
-        }
-    };
+    
 
     
     var search = document.querySelector('#search2')
