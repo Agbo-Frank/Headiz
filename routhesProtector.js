@@ -1,11 +1,14 @@
 var jwt = require('jsonwebtoken')
 var User = require('./models/user')
+require('dotenv').config()
+
+var jwtSecret = process.env.SECRET
 
 var authenticate = (req, res, next) => {
     var token = req.cookies.jwt
 
     if(token){
-        var auth = jwt.verify(token, 'Frank', (err, decodedToken) => {
+        var auth = jwt.verify(token, jwtSecret, (err, decodedToken) => {
             if(err){
                 res.redirect('login')
             }
@@ -23,7 +26,7 @@ var sendData = function(req, res, next) {
     var token = req.cookies.jwt
 
     if(token){
-        var verified = jwt.verify(token, 'Frank', async (err, decodedToken) => {
+        var verified = jwt.verify(token, jwtSecret, async (err, decodedToken) => {
             if (err){
                 res.locals.user = null
                 next()

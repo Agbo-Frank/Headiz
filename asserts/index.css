@@ -150,24 +150,74 @@ header ul li a.active{
     align-items: center;
     width: 100%;
     height: 60vh;
-    padding-bottom: 50px;
     background-color: var(--slide);
 }
 .headiz_slide > .slide{
     position: relative;
     width: 100%;
+    height: 100%;
     display: none;
 }
 .headiz_slide > .slide > div{
-   display: flex;
-   justify-content: space-between;
-   padding: 10px 18%;
+   display: block;
+   width: 100%;
+   height: 100%;
 }
-.headiz_slide > .slide > img{
+.headiz_slide > .slide .slide-details{
+    width: 60%;
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to right, rgba(200, 223, 220, 0.9) 80%, rgba(200, 223, 220, 0));
+    padding: 0 80px;
+}
+.headiz_slide > .slide .slide-details h1,
+.headiz_slide > .slide .slide-details p{
+    margin-bottom: 13px;
+}
+.headiz_slide > .slide .slide-details .link{
+    text-decoration: none;
+    color: var(--btn);
+    padding: 9px 25px;
+    border: solid 1.5px var(--btn);
+    background-color: transparent;
+    position: relative;
+    border-radius: 25px;
+    z-index: 5;
+}
+/* .headiz_slide > .slide .slide-details .link:hover{
+    color: white;
+} */
+.headiz_slide > .slide .slide-details .link::before{
+    content: '';
+    position: absolute;
+    top: 0;left: 0;
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 100%;
+    border-radius: 26px;
+    background-color: var(--btn);
+    clip-path: circle(40% at 50% 50%);
+    opacity: 0;
+    z-index: 0;
+    transition: all 0.3s linear;
+}
+.headiz_slide > .slide .slide-details .link:hover::before{
+    opacity: 0.3;
+    clip-path: circle(100%);
+    z-index: 0;
+}
+.headiz_slide > .slide > div > img{
+    display: block;
+    width: 55%;
+    height: 100%;
+    object-fit: fill;
     object-position: center;
+    margin-left: auto;
 }
 
 .slide2 > div{
@@ -192,21 +242,13 @@ header ul li a.active{
     top: 50%;
     cursor: pointer;
     user-select: none;
+    z-index: 5;
 }
 .prev{
     left: 20px;
 }
 .next{
     right: 20px;
-}
-.link{
-    text-decoration: none;
-    color: white;
-    padding: 9px 25px;
-    background-color: var(--btn);
-    position: absolute;
-    top: 80%;
-    left: 70px;
 }
 .headiz_slide .dot-container{
     position: absolute;
@@ -215,6 +257,7 @@ header ul li a.active{
     left: 50%;
     transform: translateX(-50%);
     margin: 20px 0;
+    z-index: 5;
 }
 .headiz_slide .dot-container .dot{
     cursor: pointer;
@@ -1526,32 +1569,56 @@ button:hover{
     }
     .headiz_slide{
         background-color: transparent;
+        height: 50vh;
     }
+    
+    .headiz_slide > .slide > div{
+        display: block;
+        width: 100%;
+        height: 100%;
+     }
+     .headiz_slide > .slide > div >.slide-details{
+         border-radius: 15px;
+         width: 100%;
+         height: 44vh;
+         display: block;
+         text-align: start;
+         background: transparent;
+         color: whitesmoke;
+         background: linear-gradient(to right, rgba(200, 223, 220, 0.6) 10%, rgba(200, 223, 220, 0));
+         padding: 15px;
+     }
+     .headiz_slide > .slide .slide-details p{
+         display: none;
+     }
    .headiz_slide .next,
     .headiz_slide .prev,
     .headiz_slide .link{
         display: none;
     }
     .headiz_slide .slide{
-        display: flex;
-        background-color: var(--slide);
         border-radius: 15px;
         width: 80%;
         margin: 20px auto;
         padding: 20px;
     }
-    .headiz_slide > .slide > div{
+    /* .headiz_slide > .slide > div{
         padding: 10px;
         width: 100%;
         height: 300px;
-    }
+    } */
     .headiz_slide > .slide > div h1{
         font-size: 18px;
     }
     .headiz_slide > .slide > div img{
+        border-radius: 15px;
+        display: block;
         width: 100%;
-        height: auto;
-        object-fit: contain;
+        height: 100%;
+        object-fit: cover;
+    }
+    .headiz_slide .dot-container{
+        margin-top: 6vh;
     }
     .headiz_slide .dot-container .dot{
         background-color: var(--grey);

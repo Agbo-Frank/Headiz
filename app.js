@@ -4,8 +4,10 @@ var router = require('./router')
 var bodyParser = require('body-parser')
 var mongoose = require('mongoose')
 var cookieParser = require('cookie-parser')
+require('dotenv').config()
 
 const port = process.env.PORT || 5000
+var mongodbUrl = process.env.MONGODB_URL
 
 var app = express()
 
@@ -13,10 +15,16 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cookieParser())
 
-mongoose.connect('mongodb+srv://headiz:531273@cluster0.m0urr.mongodb.net/headiz')
+mongoose.connect('mongodb://localhost/Headiz')
 .then(res => app.listen(port, ()=> {
     console.log('connected successfully');
 }))
+
+mongoose.connect(mongodbUrl, { useNewUrlParser: true, useUnifiedTopology: true, userCreateIndex: true })
+.then(res => app.listen(port, ()=> {
+    console.log('connected successfully');
+}))
+.catch(err => console.log(err))
 
 app.set('view engine', 'ejs')
 

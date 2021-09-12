@@ -2,10 +2,13 @@ var User = require('./models/user')
 var Product = require('./models/product')
 var jwt = require('jsonwebtoken')
 var bcrypt = require('bcrypt')
+require('dotenv').config()
+
+var jwtSecret = process.env.SECRET
 
 var maxAge = 60 * 60 * 24
 function tokenGen(id) {
-    return jwt.sign({ id }, 'Frank', {
+    return jwt.sign({ id }, jwtSecret, {
         expiresIn: maxAge
     })
 }
@@ -122,7 +125,7 @@ module.exports.upload_post = async (req, res) => {
         var { path } = req.file
     
         if(token){
-            jwt.verify(token, 'Frank', async (err, decodoedToken) => {
+            jwt.verify(token, jwtSecret, async (err, decodoedToken) => {
                 var p = await Product.create({
                     userId: decodoedToken.id,
                     path: path,
