@@ -15,10 +15,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cookieParser())
 
-mongoose.connect('mongodb://localhost/Headiz')
-.then(res => app.listen(port, ()=> {
-    console.log('connected successfully');
-}))
+// mongoose.connect('mongodb://localhost/Headiz')
+// .then(res => app.listen(port, ()=> {
+//     console.log('connected successfully');
+// }))
 
 mongoose.connect(mongodbUrl, { useNewUrlParser: true, useUnifiedTopology: true, userCreateIndex: true })
 .then(res => app.listen(port, ()=> {
